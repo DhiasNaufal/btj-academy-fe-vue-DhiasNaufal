@@ -8,7 +8,7 @@ import manual from "./components/manual.vue";
   <div></div>
   <TodoList />
   <!-- <manual /> -->
-  <!-- <ObjectOfArray /> -->
+  <ObjectOfArray />
 </template>
 
 <style scoped>

@@ -1,7 +1,15 @@
-# Vue 3 + Vite
+# BTJ Academy Front End: Vue 3 + Vite
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Membuat To-do List Sederhana dengan ketentuan:
 
-## Recommended IDE Setup
+1. Bagian `summary` Menampilkan ikhtisar Todo App
+2. Bagian `Form` untuk menginputkan task pada Todo App
+3. Bagian `list` untuk menampilkan task yang sudah diinputkan
+   - Setiap item di dalam `List` memiliki tombol `Delete` dan `Done`
+   - Terdapat label `priority` di bagian bawah nama Todo, dimana masing-masing priority memiliki box dengan warna
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## To-Do List App
+
+1. Aplikasi ini dikembangan dengan Framwork JS `Vue Js`
+2. Dengan Bahasa Pemrograman `JavaScript`
+3. Styling menggunakan `Tailwind CSS`
