@@ -1,20 +1,33 @@
 <template>
   <h1>TODO APP</h1>
-  <!-- <div id="sumamary" class="flex gap-2">
-    <ul v-for="(item, index) in status">
-      <li>{{ item }}</li>
-    </ul>
-  </div> -->
-  <p>{{ totalPending }} - pending</p>
-  <p>{{ totalDone }}- selese</p>
-  <p>{{ totalLow }}- low</p>
-  <p>{{ totalMed }}-med</p>
-  <p>{{ totalHigh }}-high</p>
+  <div class="flex gap-3">
+    <div class="border border-gray-500 rounded p-3">
+      <h1 class="text-center">PENDING</h1>
+      <p class="text-center">{{ totalPending }}</p>
+    </div>
+    <div>
+      <h1>LOW PRIORITY</h1>
+      <p class="text-center">{{ totalLow }}</p>
+    </div>
+    <div>
+      <h1>MEDIUM PRIORITY</h1>
+      <p class="text-center">{{ totalMed }}</p>
+    </div>
+    <div>
+      <h1>HIGH PRIORITY</h1>
+      <p class="text-center">{{ totalHigh }}</p>
+    </div>
+    <div>
+      <h1>FINISHED</h1>
+      <p class="text-center">{{ totalDone }}</p>
+    </div>
+  </div>
+
   <form id="form" @submit.prevent="tambah">
     <label for="nama">Nama</label>
     <input type="text" name="nama" id="nama" v-model="nama" />
     <label for="priority">Priority</label>
-    <select name="priority" id="priority" v-model="priority">
+    <select name="priority" id="priority" v-model="priority" class="">
       <option v-for="(item, index) in priorityList" :value="item.toLowerCase()">
         {{ item.toLowerCase() }}
       </option>
@@ -22,9 +35,7 @@
     <button type="submit">Tambah</button>
   </form>
   <div id="list">
-    <ul>
-      <!-- <li v-for="(item, index) in listNama" :key="index">{{ item }}</li> -->
-    </ul>
+    <ul></ul>
   </div>
   <!-- <p>{{ nama }}</p> -->
   <div class="flex">
@@ -37,6 +48,15 @@
           </li>
           <button @click="selesai(index)">done</button>
           <button on @click="hapus(index)">Hapus</button>
+          <div
+            :class="{
+              'bg-blue-500': todoList.priority[index] === 'low',
+              'bg-red-500': todoList.priority[index] === 'high',
+              'bg-yellow-500': todoList.priority[index] === 'medium',
+            }"
+          >
+            sdad
+          </div>
         </ul>
       </div>
     </div>
@@ -66,6 +86,7 @@ export default {
         priority: [],
         status: [],
       },
+      aselole: [],
     };
   },
   methods: {
@@ -130,6 +151,15 @@ export default {
         }
       }
       return total;
+    },
+    priorities() {
+      return [
+        { title: "PENDING", value: this.totalPending },
+        { title: "LOW PRIORITY", value: this.totalLow },
+        { title: "MEDIUM PRIORITY", value: this.totalMed },
+        { title: "HIGH PRIORITY", value: this.totalHigh },
+        { title: "FINISHED", value: this.totalDone },
+      ];
     },
   },
 };

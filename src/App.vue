@@ -1,10 +1,14 @@
 <script setup>
-import HelloWorld from "./components/HelloWorld.vue";
+import TodoList from "./components/TodoList.vue";
+import ObjectOfArray from "./components/ObjectOfArray.vue";
+import manual from "./components/manual.vue";
 </script>
 
 <template>
   <div></div>
-  <HelloWorld />
+  <TodoList />
+  <!-- <manual /> -->
+  <!-- <ObjectOfArray /> -->
 </template>
 
 <style scoped>
